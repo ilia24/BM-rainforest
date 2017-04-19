@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = product.new(product_params)
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to products_url
@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = product.find(params[:id])
+    @product = Product.find(params[:id])
 
     if @product.update_attributes(product_params)
       redirect_to product_url(@product)
